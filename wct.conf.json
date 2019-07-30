@@ -1,0 +1,15 @@
+{
+  "verbose": true,
+  "plugins": {
+    "local": {
+      "browsers": ["chrome"],
+      "browserOptions": {
+        "chrome": [
+          "start-maximized"
+        ]
+      }
+    }
+  },
+  "suites": ["tests/"],
+  "persistent": true
+}

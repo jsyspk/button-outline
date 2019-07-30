@@ -1,0 +1,20 @@
+{
+  "name": "auto-grow",
+  "description": "auto grow ya",
+  "main": "dist/auto-grow.js",
+  "authors": [
+    "Ali Masood <ahmad@zenex.co>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jsyspk/auto-grow",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "web-component-tester": "^6.5.0"
+  }
+}
