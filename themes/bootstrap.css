@@ -1,0 +1,62 @@
+.default {
+    --default-color: #000000
+    --primary-color: var(--default-color);
+    --primary-bg-color: transparent;
+    --primary-border-color: var(--default-color);
+    --primary-bg-hover-color: var(--default-color);
+    --primary-hover-color: #FFFFFF;
+}
+
+.primary {
+    --primary-border-color: #337AB7;
+    color: #337AB7;
+}
+.primary:hover{
+    background: #337AB7;
+    color: white;
+}
+
+.secondary {
+    --primary-border-color: #6C757D;
+    color: #6C757D;
+}
+.secondary:hover{
+    background: #6C757D;
+    color:white;
+}
+
+.info {
+    --primary-border-color: #5BC0DE;
+    color: #5BC0DE;
+}
+.info:hover{
+    background: #5BC0DE;
+    color: white;
+}
+
+.warning {
+    --primary-border-color: #F0AD4E;
+    color: #F0AD4E;
+}
+.warning:hover{
+    background: #F0AD4E;
+    color:white;
+}
+
+.success {
+    --primary-border-color: #5CB85C;
+    color: #5CB85C;
+}
+.success:hover{
+    background: #5CB85C;
+    color: white;
+}
+
+.danger {
+    --primary-border-color: #D9534F;
+    color: #D9534F;
+}
+.danger:hover{
+    background:#D9534F;
+    color:white;
+}
