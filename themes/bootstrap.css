@@ -1,14 +1,14 @@
 .default {
-    border-color: #000000;
-    color: #000000;
-}
-.default:hover{
-    background: #000000;
-    color: white;
+    --default-color: #000000
+    --primary-color: var(--default-color);
+    --primary-bg-color: transparent;
+    --primary-border-color: var(--default-color);
+    --primary-bg-hover-color: var(--default-color);
+    --primary-hover-color: #FFFFFF;
 }
 
 .primary {
-    border-color: #337AB7;
+    --primary-border-color: #337AB7;
     color: #337AB7;
 }
 .primary:hover{
@@ -17,7 +17,7 @@
 }
 
 .secondary {
-    border-color: #6C757D;
+    --primary-border-color: #6C757D;
     color: #6C757D;
 }
 .secondary:hover{
@@ -26,7 +26,7 @@
 }
 
 .info {
-    border-color: #5BC0DE;
+    --primary-border-color: #5BC0DE;
     color: #5BC0DE;
 }
 .info:hover{
@@ -35,7 +35,7 @@
 }
 
 .warning {
-    border-color: #F0AD4E;
+    --primary-border-color: #F0AD4E;
     color: #F0AD4E;
 }
 .warning:hover{
@@ -44,7 +44,7 @@
 }
 
 .success {
-    border-color: #5CB85C;
+    --primary-border-color: #5CB85C;
     color: #5CB85C;
 }
 .success:hover{
@@ -53,7 +53,7 @@
 }
 
 .danger {
-    border-color: #D9534F;
+    --primary-border-color: #D9534F;
     color: #D9534F;
 }
 .danger:hover{

@@ -2,8 +2,9 @@ const template = document.createElement("template");
 template.innerHTML = `
 <style>
 button{
-    border: 1px solid;
-    background: transparent;
+    border: 1px solid var(--primary-border-color, #000000);
+    background: var(--primary-bg-color, transparent);
+    color: var(--primary-color, #000000);
     padding: 12px 20px;
     text-align: center;
     text-decoration: none;
@@ -13,6 +14,10 @@ button{
     cursor: pointer;
     border-radius: 3px;
     transition: background 0.3s, color 0.3s;
+}
+button:hover {
+    background: var(--primary-bg-hover-color);
+    color: var(--primary-hover-color);
 }
 </style>
 <button><slot>Placeholder data</slot></button>
