@@ -8,39 +8,11 @@ button{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1rem;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 3px;
-}
-.default {
-    border-color: #000000;
-    color: #000000;
-}
-
-.primary {
-    border-color: #337AB7;
-    color: #337AB7;
-}
-.secondary {
-    border-color: #6C757D;
-    color: #6C757D;
-}
-.info {
-    border-color: #5BC0DE;
-    color: #5BC0DE;
-}
-.warning {
-    border-color: #F0AD4E;
-    color: #F0AD4E;
-}
-.success {
-    border-color: #5CB85C;
-    color: #5CB85C;
-}
-.danger {
-    border-color: #D9534F;
-    color: #D9534F;
+    transition: background 0.3s, color 0.3s;
 }
 </style>
 <button><slot>Placeholder data</slot></button>
@@ -48,7 +20,7 @@ button{
 
 class OutlineButton extends HTMLElement {
 
-    private btnTypes = ['primary', 'secondary', 'info', 'success', 'warning', 'danger'];
+    private validTypes = ['button', 'submit', 'reset'];
 
     constructor() {
         super();
@@ -57,23 +29,32 @@ class OutlineButton extends HTMLElement {
     }
 
     connectedCallback() {
-
-            this.shadowRoot.querySelector('button').classList.add(this.is);
+        let btn = this.shadowRoot.querySelector('button');
+        //set type
+        btn.setAttribute('type', this.type);
+        //set classes
+        btn.classList.add(this.class);
     }
 
-    get is() {
-        let btnType = 'default';
-        if(this.hasAttribute('is')){
-            let askedType = this.getAttribute("is");
-            if(this.btnTypes.indexOf(askedType) !== -1) {
-                btnType = askedType;
+    get type() {
+        let btnType = 'button';
+        if(this.hasAttribute('type')){
+            let requiredType = this.getAttribute("type");
+            if(this.validTypes.indexOf(requiredType) !== -1)
+            {
+                btnType = requiredType;
             }
         }
-
         return btnType;
     }
 
-
+    get class() {
+        let customClasses = 'default';
+        if(this.hasAttribute('class')){
+            customClasses = this.getAttribute("class");
+        }
+        return customClasses;
+    }
 }
 
 window.customElements.define('btn-outline', OutlineButton);
